@@ -1,9 +1,9 @@
-addEventListener('fetch', (event) => {
+addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
 
-const jsUrl = 'https://ab-lib.proxy.elevate.sh/sb.js'
-const hiveUrl = 'https://staging-hive.splitbee.io'
+const jsUrl = 'https://cdn.splitbee.io/sb.js'
+const hiveUrl = 'https://hive.splitbee.io'
 
 async function handleRequest(request) {
   const url = new URL(request.url)
