@@ -11,6 +11,8 @@ async function handleRequest(request) {
     return await fetch(jsUrl)
   } else {
     const newRequest = new Request(hiveUrl + url.pathname, request)
+    newRequest.headers.set('x-country', request.headers.get('cf-ipcountry'))
+
     return await fetch(newRequest)
   }
 }
