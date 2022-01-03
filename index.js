@@ -12,6 +12,7 @@ async function handleRequest(request) {
   } else {
     const newRequest = new Request(hiveUrl + url.pathname, request)
     newRequest.headers.set('x-country', request.headers.get('cf-ipcountry'))
+    newRequest.headers.set('x-real-ip', request.headers.get('x-real-ip'))
 
     return await fetch(newRequest)
   }
